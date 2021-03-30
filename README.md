@@ -1,12 +1,12 @@
-<b>/task/create - POST - for create task</b>
+<h1>/task/create - POST - for create task</h1>
 <p>{</p>
 <p>"num":int</p>
 <p>"time_sleep":float</p>
 <p>}</p>
-<p><h1>result - datetime</h1></p>
+<p><b>result - datetime<b></p>
 
-<b>/task/get_result - GET - for result task</b> 
-<p><h1>result - list </h1></p>
+<h1>/task/get_result - GET - for result task</h1> 
+<b>result - list </b>
 
-<b>/task/get_queue - GET - for result task </b>
-<p><h1>result - list with id and task </h1></p>
+</h1>/task/get_queue - GET - for result task </h1>
+<b>result - list with id and task </b>
