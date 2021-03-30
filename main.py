@@ -32,4 +32,7 @@ async def get_task():
     return list_complite_task
 @app.get('/task/get_queue')
 async def get_queue_task():
-    return list(queue_new_task.queue)
+    res_list = []
+    for i in range(len(queue_new_task.queue)):
+        res_list.append([i,queue_new_task.queue[i]])
+    return res_list
