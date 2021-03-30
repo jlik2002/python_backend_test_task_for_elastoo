@@ -6,7 +6,7 @@
 <p><b>result - datetime<b></p>
 
 <h1>/task/get_result - GET - for result task</h1> 
-<b>result - list </b>
+<p><b>result - list </b></p>
 
 </h1>/task/get_queue - GET - for result task </h1>
 <b>result - list with id and task </b>
