@@ -1,5 +1,6 @@
 import threading
 from time import sleep
+from models import Task
 
 class WorkThread(threading.Thread):
     def __init__(self,q,list_res):
@@ -12,9 +13,9 @@ class WorkThread(threading.Thread):
             if(self._q.empty()):
                 sleep(0.3)
                 continue
-            item = self._q.get()
-            num = item[0]
-            time_sleep = item[1]
+            item = self._q.get().dict()
+            num = item['num']
+            time_sleep = item['time_sleep']
             sleep(time_sleep)
             self._list_res.append(num)
     def stop(self):

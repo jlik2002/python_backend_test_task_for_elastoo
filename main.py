@@ -2,7 +2,7 @@ import datetime
 from worker import WorkThread
 from fastapi import FastAPI,Request
 import queue
-
+from models import Task
 
 queue_new_task = queue.Queue()
 list_complite_task = []
@@ -21,12 +21,11 @@ async def shutdown():
     work_thread.stop()
 @app.post('/task/create')
 async def create_task(request: Request):
-    time_create = datetime.datetime.now()
     req = await request.json()
-    time_sleep = req['time_sleep']
-    num = req['num']
-    queue_new_task.put([num,time_sleep,time_create])
-    return time_sleep
+    task:Task = Task(num=req['num'],time_sleep=req['time_sleep'],time_create=datetime.datetime.now())
+    queue_new_task.put(task)
+    print(task)
+    return task.time_create
 @app.get('/task/get_result')
 async def get_task():
     return list_complite_task
